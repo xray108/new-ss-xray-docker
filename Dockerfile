@@ -22,6 +22,7 @@ RUN set -ex \
       && apk add --no-cache --virtual .build-deps tar \
       && wget -O /root/xray-plugin.tar.gz https://github.com/teddysun/xray-plugin/releases/download/${XRAY_PLUGIN_VERSION}/xray-plugin-linux-${arch}-${XRAY_PLUGIN_VERSION}.tar.gz \
       && tar xvzf /root/xray-plugin.tar.gz -C /root \
+      && if [ "${arch}" = "arm" ]; then export arch=arm7; fi \
       && mv /root/xray-plugin_linux_${arch} /usr/local/bin/xray-plugin \
       && rm -f /root/xray-plugin.tar.gz \
       && apk del .build-deps
