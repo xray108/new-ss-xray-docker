@@ -20,4 +20,4 @@ jobs:
         run: |
           docker buildx build \
             --tag mazy/ss-xray:latest \
-            --platform linux/amd64,linux/arm/v7,linux/arm64 .
+            --platform linux/amd64,linux/arm/v7,linux/arm64 --push .
