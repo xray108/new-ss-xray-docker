@@ -2,8 +2,6 @@
 
 Shadowsocks-libev server with xray-plugin running in Docker
 
----
-
 ## Environment Variables
 
 | Variable | Default value | Description |
@@ -40,6 +38,7 @@ docker-compose up -d
 ### Client configuration
 
 *Clients available for all modern platforms and should be similar for all of that*
+
 *Here is json configration for shadowsocks-libev client for linux/macos*
 
 ```
