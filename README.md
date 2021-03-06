@@ -1,6 +1,6 @@
 # ss-v2ray-docker
 
-Shadowsocks-libev server with v2ray-plugin running in Docker. variant1
+Shadowsocks-libev server with v2ray-plugin running in Docker.variant2
 
 [![Docker Build Status](https://img.shields.io/docker/cloud/build/mazy/ss-v2ray.svg)](https://hub.docker.com/r/mazy/ss-v2ray)
 
