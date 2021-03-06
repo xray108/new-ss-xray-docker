@@ -10,8 +10,6 @@ ENV OBFS_PLUGIN xray-plugin
 ENV OBFS_OPTS   server
 ENV ARGS=
 
-USER root
-
 RUN set -ex \
       && export arch=$(uname -m) \
       && echo ${arch} \
