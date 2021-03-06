@@ -13,7 +13,7 @@ Shadowsocks-libev server with xray-plugin running in Docker
 | METHOD | `chacha20-ietf-poly1305` | Encryption method |
 | OBFS_PLUGIN | `xray-plugin` | Shadowsocks obfuscation plugin |
 | OBFS_OPTS | `server` | Options for obfuscation plugins |
-| ARGS | `` | Additional arguments for Shadowsocks |
+| ARGS | | Additional arguments for Shadowsocks |
 
 ## Usage example
 
@@ -39,7 +39,7 @@ docker-compose up -d
 
 *Clients available for all modern platforms and should be similar for all of that*
 
-*Here is json configration for shadowsocks-libev client for linux/macos*
+*Here is json configration for shadowsocks-libev client for linux/macos:*
 
 ```
 {
