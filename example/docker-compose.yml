@@ -3,31 +3,12 @@ version: "3.3"
 services:
 
   ss-xray:
-    image: "mazy/ss-xray:1.3.1"
+    image: "mazy/ss-xray:v1.3.1"
     container_name: "ss-xray"
     restart: unless-stopped
-    sysctls:
-      - net.core.somaxconn=4096
-      - net.ipv4.tcp_syncookies=1
-      - net.ipv4.tcp_tw_reuse=1
-      - net.ipv4.tcp_fin_timeout=30
-      - net.ipv4.tcp_keepalive_time=1200
-      - net.ipv4.ip_local_port_range=10000 65000
-      - net.ipv4.tcp_max_syn_backlog=8192
-      - net.ipv4.tcp_max_tw_buckets=5000
-      - net.ipv4.tcp_fastopen=3
-      - net.ipv4.tcp_mtu_probing=1
-      - net.ipv4.tcp_congestion_control=hybla
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 51200
-        hard: 51200
     networks:
       - default
       - traefik
-    logging:
-      driver: none
     environment:
       - PASSWORD=password
       - 'ARGS=--plugin-opts=server;path=/xray'
@@ -41,27 +22,9 @@ services:
   traefik:
     image: "traefik:v2.3"
     container_name: "traefik"
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 51200
-        hard: 51200
-    sysctls:
-      - net.core.somaxconn=4096
-      - net.ipv4.tcp_syncookies=1
-      - net.ipv4.tcp_tw_reuse=1
-      - net.ipv4.tcp_fin_timeout=30
-      - net.ipv4.tcp_keepalive_time=1200
-      - net.ipv4.ip_local_port_range=10000 65000
-      - net.ipv4.tcp_max_syn_backlog=8192
-      - net.ipv4.tcp_max_tw_buckets=5000
-      - net.ipv4.tcp_fastopen=3
-      - net.ipv4.tcp_mtu_probing=1
-      - net.ipv4.tcp_congestion_control=hybla
     restart: unless-stopped
     command:
       - "--api.insecure=true"
-      - "--metrics.prometheus=true"
       - "--entryPoints.metrics.address=:8082"
       - "--metrics.prometheus.entryPoint=metrics"
       - "--providers.docker=true"
@@ -75,8 +38,6 @@ services:
       - "--certificatesresolvers.le.acme.email=your_email@gmail.com"
       - "--certificatesresolvers.le.acme.storage=/letsencrypt/acme.json"
       - "--providers.docker.network=traefik"
-      - "--accesslog=false"
-      - "--accesslog.format=json"
     ports:
       - "80:80"
       - "443:443"
