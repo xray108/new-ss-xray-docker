@@ -14,8 +14,10 @@ RUN set -ex \
 
 ENV SHADOWSOCKS_VERSION v1.9.2
 RUN set -ex \
+      && export toolchain=musl \
       && export arch=$(uname -m) \
-      && wget -O /root/shadowsocks-plugin.tar.xz https://github.com/shadowsocks/shadowsocks-rust/releases/download/${SHADOWSOCKS_VERSION}/shadowsocks-${SHADOWSOCKS_VERSION}.${arch}-unknown-linux-musl.tar.xz \
+      && if [ "${arch}" = "armv7l" ]; then export arch=arm && export toolchain=musleabihf ; fi \
+      && wget -O /root/shadowsocks-plugin.tar.xz https://github.com/shadowsocks/shadowsocks-rust/releases/download/${SHADOWSOCKS_VERSION}/shadowsocks-${SHADOWSOCKS_VERSION}.${arch}-unknown-linux-${toolchain}.tar.xz \
       && tar xvf /root/shadowsocks-plugin.tar.xz -C /root \
       && mv /root/ss* /usr/local/bin/ \
       && rm -f /root/shadowsocks-plugin.tar.xz
