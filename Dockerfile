@@ -37,8 +37,8 @@ CMD exec ssserver \
       -s $SERVER_ADDR \
       -k $PASSWORD \
       -m $METHOD \
-      --plugin $OBFS_PLUGIN \
-      --plugin-opts $OBFS_OPTS \
+      --plugin $PLUGIN \
+      --plugin-opts $PLUGIN_OPTS \
       $ARGS
 
 EXPOSE $SERVER_PORT
