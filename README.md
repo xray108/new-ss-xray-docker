@@ -1,14 +1,13 @@
 # ss-xray
 
-Shadowsocks-libev server with xray-plugin running in Docker
+Docker image for shadowsocks-rust server with build-in xray-plugin
 
 ## Environment Variables
 
 | Variable | Default value | Description |
 |-|-|-|
 | HOST | `mydomain.me` | Hostname for server |
-| SERVER_ADDR | `0.0.0.0` | Local address to listen on |
-| SERVER_PORT | `1080` | Local port to listen on |
+| SERVER_ADDR | `0.0.0.0:1080` | Local address to listen on |
 | PASSWORD | `password` | Shadowsocks password |
 | METHOD | `chacha20-ietf-poly1305` | Encryption method |
 | OBFS_PLUGIN | `xray-plugin` | Shadowsocks obfuscation plugin |
