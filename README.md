@@ -2,6 +2,12 @@
 
 Docker image for shadowsocks-rust server with build-in xray-plugin
 
+## Versioning
+
+```bash
+`${SHADOWSOCKS_VERSION}-${XRAY_PLUGIN_VERSION}-${BUILD_VERSION}`
+```
+
 ## Environment Variables
 
 | Variable | Default value | Description |
