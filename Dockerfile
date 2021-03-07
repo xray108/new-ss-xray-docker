@@ -29,8 +29,8 @@ ENV SERVER_ADDR 0.0.0.0:1080
 ENV SERVER_PORT 1080
 ENV PASSWORD    password
 ENV METHOD      chacha20-ietf-poly1305
-ENV OBFS_PLUGIN xray-plugin
-ENV OBFS_OPTS   server
+ENV PLUGIN      xray-plugin
+ENV PLUGIN_OPTS server
 ENV ARGS=
 
 CMD exec ssserver \

@@ -3,7 +3,7 @@ version: "3.3"
 services:
 
   ss-xray:
-    image: "mazy/ss-xray:v1.3.1"
+    image: "mazy/ss-xray:latest"
     container_name: "ss-xray"
     restart: unless-stopped
     networks:
@@ -11,7 +11,7 @@ services:
       - traefik
     environment:
       - PASSWORD=password
-      - 'ARGS=--plugin-opts=server;path=/xray'
+      - 'OBFS_OPTS=server;path=/xray'
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.ss-xray.rule=Host(`mydomain.me`)"

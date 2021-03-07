@@ -10,8 +10,8 @@ Docker image for shadowsocks-rust server with build-in xray-plugin
 | SERVER_ADDR | `0.0.0.0:1080` | Local address to listen on |
 | PASSWORD | `password` | Shadowsocks password |
 | METHOD | `chacha20-ietf-poly1305` | Encryption method |
-| OBFS_PLUGIN | `xray-plugin` | Shadowsocks obfuscation plugin |
-| OBFS_OPTS | `server` | Options for obfuscation plugins |
+| PLUGIN | `xray-plugin` | Shadowsocks obfuscation plugin |
+| PLUGIN_OPTS | `server` | Options for obfuscation plugin |
 | ARGS | | Additional arguments for Shadowsocks |
 
 ## Usage example
