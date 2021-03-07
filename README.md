@@ -44,7 +44,7 @@ docker-compose up -d
 
 *Clients available for all modern platforms and should be similar for all of that*
 
-*Here is json configration for shadowsocks-libev client for linux/macos:*
+*Here is json configration for shadowsocks-rust client for linux/macos:*
 
 ```
 {
