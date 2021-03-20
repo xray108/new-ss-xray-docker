@@ -1,6 +1,6 @@
 # ss-xray
 
-Docker image for shadowsocks-rust server with build-in xray-plugin
+Docker image for shadowsocks-rust server with build-in xray-plugin. All builds was made by [GitHub Actions](https://github.com/dmirubtsov/ss-xray-docker/actions)
 
 ## Versioning
 
