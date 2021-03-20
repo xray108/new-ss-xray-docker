@@ -10,6 +10,8 @@ ${SHADOWSOCKS_VERSION}-${XRAY_PLUGIN_VERSION}-${BUILD_VERSION}
 
 ## Environment Variables
 
+*You can apply configuration by passing environment variables or mount your config directly to container*
+
 | Variable | Default value | Description |
 |-|-|-|
 | HOST | `mydomain.me` | Hostname for server |

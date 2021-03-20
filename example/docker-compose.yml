@@ -11,7 +11,7 @@ services:
       - traefik
     environment:
       - PASSWORD=password
-      - 'OBFS_OPTS=server;path=/xray'
+      - 'PLUGIN_OPTS=server;path=/xray'
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.ss-xray.rule=Host(`mydomain.me`)"
@@ -34,7 +34,7 @@ services:
       - "--entrypoints.web.http.redirections.entryPoint.to=websecure"
       - "--entrypoints.web.http.redirections.entryPoint.scheme=https"
       - "--entrypoints.web.http.redirections.entrypoint.permanent=true"
-      - "--certificatesresolvers.myresolver.acme.tlschallenge=true"
+      - "--certificatesresolvers.le.acme.tlschallenge=true"
       - "--certificatesresolvers.le.acme.email=your_email@gmail.com"
       - "--certificatesresolvers.le.acme.storage=/letsencrypt/acme.json"
       - "--providers.docker.network=traefik"

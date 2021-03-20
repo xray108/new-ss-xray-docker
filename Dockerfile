@@ -1,6 +1,6 @@
 FROM alpine:3.13
 
-ENV XRAY_PLUGIN_VERSION v1.3.1
+ENV XRAY_PLUGIN_VERSION v1.4.0
 RUN set -ex \
       && export arch=$(uname -m) \
       && if [ "${arch}" = "x86_64" ]; then export arch=amd64; fi \
