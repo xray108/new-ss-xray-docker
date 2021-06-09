@@ -12,7 +12,7 @@ RUN set -ex \
       && mv /root/xray-plugin_linux_${arch} /usr/local/bin/xray-plugin \
       && rm -f /root/xray-plugin.tar.gz
 
-ENV SHADOWSOCKS_VERSION v1.11.0
+ENV SHADOWSOCKS_VERSION v1.11.1
 RUN set -ex \
       && export toolchain=musl \
       && export arch=$(uname -m) \
