@@ -1,4 +1,4 @@
-FROM alpine:3.13
+FROM alpine:3.14
 
 ENV XRAY_PLUGIN_VERSION v1.5.0
 RUN set -ex \
