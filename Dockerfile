@@ -33,7 +33,7 @@ ENV PLUGIN      xray-plugin
 ENV PLUGIN_OPTS server
 ENV ARGS=
 
-CMD exec ssserver \
+CMD exec ssservice server \
       -s $SERVER_ADDR \
       -k $PASSWORD \
       -m $METHOD \
