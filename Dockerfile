@@ -1,6 +1,6 @@
 FROM alpine:3.15
 
-ENV XRAY_PLUGIN_VERSION v1.5.1
+ENV XRAY_PLUGIN_VERSION v1.5.2
 RUN set -ex \
       && export arch=$(uname -m) \
       && if [ "${arch}" = "x86_64" ]; then export arch=amd64; fi \
@@ -12,7 +12,7 @@ RUN set -ex \
       && mv /root/xray-plugin_linux_${arch} /usr/local/bin/xray-plugin \
       && rm -f /root/xray-plugin.tar.gz
 
-ENV SHADOWSOCKS_VERSION v1.12.4
+ENV SHADOWSOCKS_VERSION v1.12.5
 RUN set -ex \
       && export toolchain=musl \
       && export arch=$(uname -m) \
