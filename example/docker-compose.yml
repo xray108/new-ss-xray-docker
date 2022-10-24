@@ -1,9 +1,9 @@
-version: "3.3"
+version: "3.8"
 
 services:
 
   ss-xray:
-    image: "mazy/ss-xray:latest"
+    image: "xr108/ss-xray:latest"
     container_name: "ss-xray"
     restart: unless-stopped
     networks:
