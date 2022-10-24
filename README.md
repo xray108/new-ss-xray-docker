@@ -8,7 +8,7 @@ Docker image for shadowsocks-rust server with build-in xray-plugin. All builds w
 ## Versioning
 
 ```bash
-${SHADOWSOCKS_VERSION}-${XRAY_PLUGIN_VERSION}-${BUILD_VERSION}
+${SHADOWSOCKS_VERSION}-${XRAY_PLUGIN_VERSION}
 ```
 
 ## Environment Variables
