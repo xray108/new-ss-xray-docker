@@ -55,7 +55,7 @@
       "inet4_address": "172.19.0.1/28",
       "inet6_address": "fdfe:dcba:9876::1/126",
       "auto_route": true,
-      "endpoint_independent_nat": true,
+      "strict_route": true,
       "stack": "system",
       "sniff": true,
       "sniff_override_destination": true,
@@ -79,6 +79,7 @@
         "Польша",
         "Финляндия"
       ]
+      "default": "Финляндия"
     },
     {
       "type": "vless",
@@ -100,8 +101,7 @@
         "headers": {
           "Host": "onedns.top"
         }
-      },
-      "packet_encoding": ""
+      }
     },
     {
       "type": "vless",
@@ -123,8 +123,7 @@
         "headers": {
           "Host": "vmees.oned4d.cc"
         }
-      },
-      "packet_encoding": ""
+      }
     },
     {
       "type": "direct",
