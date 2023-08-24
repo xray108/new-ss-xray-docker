@@ -56,16 +56,7 @@
       "inet6_address": "fdfe:dcba:9876::1/126",
       "auto_route": true,
       "strict_route": true,
-      "stack": "system",
-      "sniff": true,
-      "sniff_override_destination": true,
-      "domain_strategy": "prefer_ipv4"
-    },
-    {
-      "type": "mixed",
-      "tag": "mixed-in",
-      "listen": "127.0.0.1",
-      "listen_port": 2080,
+      "stack": "gvisor",
       "sniff": true,
       "sniff_override_destination": true,
       "domain_strategy": "prefer_ipv4"
@@ -77,9 +68,10 @@
       "tag": "proxy",
       "outbounds": [
         "Польша",
-        "Финляндия"
+        "Финляндия",
+        "Польша tuic"
       ],
-      "default": "Польша"
+      "default": "Финляндия"
     },
     {
       "type": "vless",
@@ -123,6 +115,22 @@
         "headers": {
           "Host": "vmees.oned4d.cc"
         }
+      }
+    },
+    {
+      "type": "tuic",
+      "tag": "Польша tuic",
+      "domain_strategy": "prefer_ipv4",
+      "server": "onedns.top",
+      "server_port": 54322,
+      "uuid": "059032A9-7D40-4A96-9BB1-36823D848068",
+      "password": "hello",
+      "congestion_control": "cubic",
+      "udp_relay_mode": "quic",
+      "zero_rtt_handshake": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "onedns.top"
       }
     },
     {
