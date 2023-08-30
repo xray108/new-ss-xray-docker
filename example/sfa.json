@@ -60,7 +60,7 @@
       "outbounds": [
         "Польша",
         "Финляндия",
-        "Poland_tuic"
+        "tuic"
       ],
       "default": "Польша"
     },
@@ -110,7 +110,7 @@
     },
     {
       "type": "tuic",
-      "tag": "Poland_tuic",
+      "tag": "tuic",
       "domain_strategy": "prefer_ipv4",
       "server": "onedns.top",
       "server_port": 54322,
