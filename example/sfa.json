@@ -58,15 +58,15 @@
       "type": "selector",
       "tag": "proxy",
       "outbounds": [
-        "Польша",
-        "Финляндия",
+        "Poland",
+        "Finland",
         "tuic"
       ],
-      "default": "Польша"
+      "default": "Finland"
     },
     {
       "type": "vless",
-      "tag": "Польша",
+      "tag": "Poland",
       "server": "onedns.top",
       "server_port": 54321,
       "uuid": "8e472fa3-2a0e-4247-b94c-8c0e86cbccfd",
@@ -88,7 +88,7 @@
     },
     {
       "type": "vless",
-      "tag": "Финляндия",
+      "tag": "Finland",
       "server": "vmees.oned4d.cc",
       "server_port": 54321,
       "uuid": "8e472fa3-2a0e-4247-b94c-8c0e86cbccfd",
