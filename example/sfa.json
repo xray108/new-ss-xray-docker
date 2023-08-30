@@ -46,7 +46,7 @@
       "inet4_address": "172.19.0.1/28",
       "inet6_address": "fdfe:dcba:9876::1/126",
       "auto_route": true,
-      "strict_route": true,
+      "strict_route": false,
       "stack": "system",
       "sniff": true,
       "sniff_override_destination": true,
@@ -162,11 +162,19 @@
           "vk-cdn.net",
           "userapi.com",
           "2ip.io",
+          "4pda.to", 
           "google.com"
         ],
         "domain_suffix": [
           ".ru",
-          ".рф"
+          ".рф",
+          "vk.com",
+          "mycdn.me",
+          "vk-cdn.net",
+          "userapi.com",
+          "2ip.io",
+          "4pda.to",
+          "google.com"
         ],
         "outbound": "direct"
       }
