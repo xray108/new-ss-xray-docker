@@ -170,6 +170,6 @@
         ],
         "outbound": "direct"
       }
-    ],
+    ]
     "auto_detect_interface": true
   }
