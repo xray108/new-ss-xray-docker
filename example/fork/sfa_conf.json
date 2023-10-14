@@ -147,7 +147,6 @@
       },
       {
         "domain": [
-          "vk.com",
           "mycdn.me",
           "vk-cdn.net",
           "userapi.com",
@@ -159,7 +158,14 @@
         ],
         "domain_suffix": [
           ".ru",
-          ".рф"
+          ".рф",
+          "vk.com",
+          ".googlevideo.com",
+          ".google.com",
+          ".youtube.com",
+          ".gvt2.com",
+          ".googleapis.com",
+          ".gstatic.com"
         ],
         "outbound": "bypass"
       }
