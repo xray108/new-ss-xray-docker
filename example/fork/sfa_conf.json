@@ -169,7 +169,10 @@
           ".gvt2.com",
           ".googleapis.com",
           ".ggpht.com",
-          ".gstatic.com"
+          ".gstatic.com",
+          ".googleusercontent.com",
+          ".2gis.com",
+          ".ozonusercontent.com"
         ],
         "outbound": "bypass"
       }
