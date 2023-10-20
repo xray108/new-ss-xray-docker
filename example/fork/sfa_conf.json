@@ -147,27 +147,27 @@
       },
       {
         "domain": [
-          "mycdn.me",
-          "vk-cdn.net",
-          "userapi.com",
-          "vkuser.net",
           "vkuseraudio.net",
           "vk-portal.net",
           "google.com",
           "4pda.to",
-          "ggpht.com",
           "returnyoutubedislikeapi.com",
           "sponsor.ajay.app"
         ],
         "domain_suffix": [
           ".ru",
           ".рф",
-          "vk.com",
+          ".vk.com",
+          ".mycdn.me",
+          ".vk-cdn.net",
+          ".vkuser.net",
+          ".userapi.com",
           ".googlevideo.com",
           ".google.com",
           ".youtube.com",
           ".gvt2.com",
           ".googleapis.com",
+          ".ggpht.com",
           ".gstatic.com"
         ],
         "outbound": "bypass"
