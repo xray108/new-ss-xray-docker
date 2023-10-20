@@ -147,8 +147,7 @@
       },
       {
         "domain": [
-          "vkuseraudio.net",
-          "vk-portal.net",
+          "vk.com",
           "google.com",
           "4pda.to",
           "returnyoutubedislikeapi.com",
@@ -160,7 +159,9 @@
           ".vk.com",
           ".mycdn.me",
           ".vk-cdn.net",
+          ".vk-portal.net",
           ".vkuser.net",
+          ".vkuseraudio.net",
           ".userapi.com",
           ".googlevideo.com",
           ".google.com",
