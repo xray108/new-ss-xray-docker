@@ -13,7 +13,7 @@
       },
       {
         "tag": "dns-direct",
-        "address": "94.140.14.14",
+        "address": "1.1.1.1",
         "address_resolver": "dns-local",
         "strategy": "prefer_ipv4",
         "detour": "direct"
@@ -31,9 +31,10 @@
     "rules": [
       {
         "domain": [
-          "onedns.top",
+          "hide-pl.oned4d.cc",
           "hide-fl.oned4d.cc",
-          "blog.jazinbaz.in"
+          "blog.jazinbaz.in",
+          "zypper.ru"
         ],
         "server": "dns-direct"
       }
@@ -61,6 +62,7 @@
       "tag": "proxy",
       "outbounds": [
         "Финляндия",
+        "Польша",
         "Tuic-Польша",
         "Hysteria2-Польша"
       ],
@@ -91,10 +93,34 @@
       "packet_encoding": "xudp"
     },
     {
+      "type": "vless",
+      "tag": "Польша",
+      "domain_strategy": "prefer_ipv4",
+      "server": "hide-pl.oned4d.cc",
+      "server_port": 443,
+      "uuid": "32ff0ed2-b520-485e-9c4c-5b36456da50c",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "zypper.ru",
+        "alpn": "h2",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "sM8_SgiYs1rxhfR_JG0EJ79LRX5DX345cRMI7x0Um2g",
+          "short_id": "a1b2c3d4"
+        }
+      },
+      "packet_encoding": "xudp"
+    },
+    {
       "type": "tuic",
       "tag": "Tuic-Польша",
       "domain_strategy": "prefer_ipv4",
-      "server": "onedns.top",
+      "server": "hide-pl.oned4d.cc",
       "server_port": 54322,
       "uuid": "059032A9-7D40-4A96-9BB1-36823D848068",
       "password": "hello",
@@ -103,14 +129,14 @@
       "zero_rtt_handshake": true,
       "tls": {
         "enabled": true,
-        "server_name": "onedns.top"
+        "server_name": "hide-pl.oned4d.cc"
       }
     },
     {
       "type": "hysteria2",
       "tag": "Hysteria2-Польша",
       "domain_strategy": "prefer_ipv4",
-      "server": "onedns.top",
+      "server": "hide-pl.oned4d.cc",
       "server_port": 54320,
       "password": "z1vnukr8",
       "tls": {
@@ -158,9 +184,9 @@
           ".рф",
           ".vk.com",
           ".mycdn.me",
+          ".vkuser.net",
           ".vk-cdn.net",
           ".vk-portal.net",
-          ".vkuser.net",
           ".vkuseraudio.net",
           ".userapi.com",
           ".googlevideo.com",
