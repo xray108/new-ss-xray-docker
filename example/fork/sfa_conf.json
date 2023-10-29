@@ -7,13 +7,13 @@
     "servers": [
       {
         "tag": "dns-remote",
-        "address": "https://dns.google/dns-query",
+        "address": "https://dns.adguard-dns.com/dns-query",
         "address_resolver": "dns-direct",
         "strategy": "prefer_ipv4"
       },
       {
         "tag": "dns-direct",
-        "address": "1.1.1.1",
+        "address": "https://dns.adguard-dns.com/dns-query",
         "address_resolver": "dns-local",
         "strategy": "prefer_ipv4",
         "detour": "direct"
@@ -64,9 +64,10 @@
         "Финляндия",
         "Польша",
         "Tuic-Польша",
-        "Hysteria2-Польша"
+        "Hysteria2-Польша",
+        "Hysteria2-Финляндия"
       ],
-      "default": "Финляндия"
+      "default": "Hysteria2-Финляндия"
     },
     {
       "type": "vless",
@@ -145,6 +146,18 @@
       }
     },
     {
+      "type": "hysteria2",
+      "tag": "Hysteria2-Финляндия",
+      "domain_strategy": "prefer_ipv4",
+      "server": "hide-fl.oned4d.cc",
+      "server_port": 64734,
+      "password": "z1vnukr8",
+      "tls": {
+        "enabled": true,
+        "alpn": "h3"
+      }
+    },
+    {
       "type": "direct",
       "tag": "direct"
     },
@@ -177,7 +190,8 @@
           "google.com",
           "4pda.to",
           "returnyoutubedislikeapi.com",
-          "sponsor.ajay.app"
+          "sponsor.ajay.app",
+          "icloud.com",
         ],
         "domain_suffix": [
           ".ru",
@@ -194,11 +208,15 @@
           ".youtube.com",
           ".gvt2.com",
           ".googleapis.com",
-          ".ggpht.com",
           ".gstatic.com",
           ".googleusercontent.com",
           ".2gis.com",
-          ".ozonusercontent.com"
+          ".ozonusercontent.com",
+          ".yandex.net",
+          ".cdn-apple.com",
+          ".apple.com",
+          ".icloud.com"
+          
         ],
         "outbound": "bypass"
       }
