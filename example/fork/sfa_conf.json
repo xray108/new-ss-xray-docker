@@ -20,7 +20,7 @@
       },
       {
         "tag": "dns-local",
-        "address": "local",
+        "address": "1.1.1.1",
         "detour": "direct"
       },
       {
