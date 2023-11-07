@@ -13,7 +13,7 @@
       },
       {
         "tag": "dns-direct",
-        "address": "https://dns.adguard-dns.com/dns-query",
+        "address": "https://dns.cloudflare.com/dns-query",
         "address_resolver": "dns-local",
         "strategy": "prefer_ipv4",
         "detour": "direct"
