@@ -68,7 +68,7 @@
     "Hysteria2-Финляндия"
   ],
   "url": "https://www.gstatic.com/generate_204",
-  "interval": "5m",
+  "interval": "2m",
   "tolerance": 75,
   "interrupt_exist_connections": false
     },
@@ -81,8 +81,7 @@
         "Tuic-Польша",
         "Hysteria2-Польша",
         "Hysteria2-Финляндия"
-      ],
-      "default": "Hysteria2-Финляндия"
+      ]
     },
     {
       "type": "vless",
