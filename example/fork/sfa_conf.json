@@ -32,7 +32,7 @@
       {
         "domain": [
           "hide-pl.oned4d.cc",
-          "hide-fl.oned4d.cc",
+          "fkrkn-fl.oned4d.cc",
           "blog.jazinbaz.in",
           "zypper.ru"
         ],
@@ -73,7 +73,7 @@
       "type": "vless",
       "tag": "Финляндия",
       "domain_strategy": "prefer_ipv4",
-      "server": "hide-fl.oned4d.cc",
+      "server": "fkrkn-fl.oned4d.cc",
       "server_port": 443,
       "uuid": "32ff0ed2-b520-485e-9c4c-5b36456da50c",
       "flow": "xtls-rprx-vision",
@@ -149,8 +149,8 @@
       "type": "hysteria2",
       "tag": "Hysteria2-Финляндия",
       "domain_strategy": "prefer_ipv4",
-      "server": "hide-fl.oned4d.cc",
-      "server_port": 64734,
+      "server": "fkrkn-fl.oned4d.cc",
+      "server_port": 55320,
       "password": "z1vnukr8",
       "tls": {
         "enabled": true,
