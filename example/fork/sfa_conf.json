@@ -58,6 +58,21 @@
   ],
   "outbounds": [
     {
+  "type": "urltest",
+  "tag": "auto",
+  "outbounds": [
+    "Финляндия",
+    "Польша",
+    "Tuic-Польша",
+    "Hysteria2-Польша",
+    "Hysteria2-Финляндия"
+  ],
+  "url": "https://www.gstatic.com/generate_204",
+  "interval": "5m",
+  "tolerance": 75,
+  "interrupt_exist_connections": false
+    },
+    {
       "type": "selector",
       "tag": "proxy",
       "outbounds": [
