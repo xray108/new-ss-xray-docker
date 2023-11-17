@@ -45,7 +45,7 @@
     {
       "type": "tun",
       "tag": "tun-in",
-      "mtu": 9000,
+      "mtu": 1500,
       "inet4_address": "172.19.0.1/28",
       "inet6_address": "fdfe:dcba:9876::1/126",
       "auto_route": true,
