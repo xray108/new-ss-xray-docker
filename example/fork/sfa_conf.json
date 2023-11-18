@@ -47,7 +47,7 @@
         "server": "dns-direct"
       }
     ],
-    "independent_cache": true
+    "independent_cache": true,
     "final": "dns_direct"
   },
   "inbounds": [
