@@ -21,7 +21,7 @@
       },
       {
         "tag": "dns_resolver",
-        "address": "1.1.1.1",
+        "address": "77.88.8.8",
         "strategy": "prefer_ipv4",
         "detour": "direct"
       },
@@ -44,7 +44,7 @@
           "blog.jazinbaz.in",
           "zypper.ru"
         ],
-        "server": "dns-direct"
+        "server": "dns_resolver"
       }
     ],
     "independent_cache": true,
