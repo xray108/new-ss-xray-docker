@@ -35,7 +35,7 @@
         "outbound": [
             "any"
         ],
-        "server": "dns_proxy"
+        "server": "dns_direct"
       },
       {
         "domain": [
