@@ -21,7 +21,7 @@
       },
       {
         "tag": "dns_resolver",
-        "address": "77.88.8.8",
+        "address": "local",
         "strategy": "prefer_ipv4",
         "detour": "direct"
       },
@@ -53,7 +53,7 @@
     {
       "type": "tun",
       "tag": "tun-in",
-      "mtu": 1500,
+      "mtu": 9000,
       "inet4_address": "172.19.0.1/28",
       "inet6_address": "fdfe:dcba:9876::1/126",
       "auto_route": true,
@@ -76,7 +76,7 @@
     "Hysteria2-Финляндия"
   ],
   "url": "http://cp.cloudflare.com/",
-  "interval": "2m",
+  "interval": "3m",
   "tolerance": 50,
   "interrupt_exist_connections": false
     },
@@ -207,13 +207,22 @@
         "outbound": "dns-out"
       },
       {
+        "clash_mode": "direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "global",
+        "outbound": "proxy"
+      },
+      {
         "domain": [
           "vk.com",
           "google.com",
           "4pda.to",
           "returnyoutubedislikeapi.com",
           "sponsor.ajay.app",
-          "icloud.com"
+          "icloud.com",
+          "yastatic.net"
         ],
         "domain_suffix": [
           ".ru",
@@ -238,8 +247,12 @@
           ".yandex.net",
           ".cdn-apple.com",
           ".apple.com",
-          ".icloud.com"
-          
+          ".icloud.com" 
+        ],
+        "ip_cidr": [
+          "10.0.0.0/24",
+          "192.168.0.0/24",
+          "192.168.1.0/24"
         ],
         "outbound": "direct"
       }
