@@ -98,7 +98,6 @@
       "server": "fkrkn-fl.oned4d.cc",
       "server_port": 443,
       "uuid": "32ff0ed2-b520-485e-9c4c-5b36456da50c",
-      "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
         "server_name": "blog.jazinbaz.in",
