@@ -81,17 +81,6 @@
   "interrupt_exist_connections": false
     },
     {
-      "type": "selector",
-      "tag": "proxy",
-      "outbounds": [
-        "Финляндия",
-        "Польша",
-        "Tuic-Польша",
-        "Hysteria2-Польша",
-        "Hysteria2-Финляндия"
-      ]
-    },
-    {
       "type": "vless",
       "tag": "Финляндия",
       "domain_strategy": "prefer_ipv4",
