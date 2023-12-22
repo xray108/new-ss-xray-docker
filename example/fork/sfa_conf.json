@@ -188,11 +188,7 @@
       {
         "port": 53,
         "outbound": "dns-out"
-      },
-      {
-        "inbound": "dns-in",
-        "outbound": "dns-out"
-      },
+      }, 
       {
         "clash_mode": "direct",
         "outbound": "direct"
