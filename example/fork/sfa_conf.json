@@ -41,7 +41,7 @@
         "domain": [
           "hide-pl.oned4d.cc",
           "fkrkn-fl.oned4d.cc",
-          "blog.jazinbaz.in",
+          "git.unical.uz",
           "zypper.ru"
         ],
         "server": "dns_resolver"
@@ -69,8 +69,10 @@
   "type": "urltest",
   "tag": "auto",
   "outbounds": [
+    "Финляндия",
     "Польша",
     "Tuic-Польша",
+    "Hysteria2-Финляндия",
     "Hysteria2-Польша"
   ],
   "url": "http://cp.cloudflare.com/",
@@ -87,7 +89,7 @@
       "uuid": "32ff0ed2-b520-485e-9c4c-5b36456da50c",
       "tls": {
         "enabled": true,
-        "server_name": "blog.jazinbaz.in",
+        "server_name": "git.unical.uz",
         "alpn": "h2",
         "utls": {
           "enabled": true,
