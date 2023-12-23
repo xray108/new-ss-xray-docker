@@ -69,11 +69,9 @@
   "type": "urltest",
   "tag": "auto",
   "outbounds": [
-    "Финляндия",
     "Польша",
     "Tuic-Польша",
-    "Hysteria2-Польша",
-    "Hysteria2-Финляндия"
+    "Hysteria2-Польша"
   ],
   "url": "http://cp.cloudflare.com/",
   "interval": "3m",
