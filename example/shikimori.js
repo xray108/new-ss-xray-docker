@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Просмотр аниме онлайн на shikimori.one
 // @namespace http://tampermonkey.net/
-// @version 0.3.2
+// @version 0.3.3
 // @description Добавляет кнопку "Смотреть онлайн" на странице с аниме и при нажатии выводит видеоплеер kodik для просмотра прямо на Shikimori
 // @author XRay108
 // @icon https://www.google.com/s2/favicons?sz=64&domain=shikimori.one
@@ -16,59 +16,59 @@
 
     let currentPageTitle = document.title;
     let watchOnlineButtonAdded = false;
-    let videoWindow = null;
+    let videoModal = null;
 
     const targetSelector = '.b-add_to_list.planned';
     const descriptionSelector = '.c-about';
 
-    // Функция открытия или закрытия окна с iframe
+    // Функция открытия или закрытия модального окна с iframe
     function toggleVideoPlayer(button) {
-        if (!videoWindow || videoWindow.closed) {
-            openVideoWindow();
+        if (!videoModal) {
+            openVideoModal();
             button.textContent = '✔ Закрыть';
         } else {
-            closeVideoWindow();
+            closeVideoModal();
             button.textContent = '▶ Смотреть онлайн';
         }
     }
 
-    // Открытие окна с iframe-видеоплеером
-    function openVideoWindow() {
+    // Открытие модального окна с iframe-видеоплеером
+    function openVideoModal() {
         const shikimoriID = getShikimoriID();
         if (shikimoriID) {
-            // Устанавливаем ширину и высоту с соотношением 16:9
-            const width = 960;
-            const height = Math.round(width * 9 / 16);
+            // Создание модального окна
+            videoModal = document.createElement('div');
+            videoModal.style.position = 'fixed';
+            videoModal.style.top = '0';
+            videoModal.style.left = '0';
+            videoModal.style.width = '100%';
+            videoModal.style.height = '100%';
+            videoModal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            videoModal.style.zIndex = '1000';
+            videoModal.style.display = 'flex';
+            videoModal.style.justifyContent = 'center';
+            videoModal.style.alignItems = 'center';
 
-            // Открытие нового пустого окна с тем же заголовком, что и у текущей страницы
-            videoWindow = window.open('', currentPageTitle, `width=${width},height=${height}`);
+            // Создание iframe и добавление в модальное окно
+            const videoIframe = document.createElement('iframe');
+            videoIframe.src = `//kodik.cc/find-player?shikimoriID=${shikimoriID}`;
+            videoIframe.width = '90%';
+            videoIframe.height = '50%';
+            videoIframe.frameBorder = 0;
+            videoIframe.allowFullscreen = true;
+            videoIframe.setAttribute('allow', 'autoplay *; fullscreen *');
+            videoModal.appendChild(videoIframe);
 
-            if (videoWindow) {
-                // Установка заголовка нового окна
-                videoWindow.document.title = currentPageTitle;
-
-                // Добавление стилей для корректного отображения iframe
-                videoWindow.document.body.style.margin = '0';
-                videoWindow.document.body.style.overflow = 'hidden';
-
-                // Создание iframe и добавление в новое окно
-                const videoIframe = videoWindow.document.createElement('iframe');
-                videoIframe.src = `//kodik.cc/find-player?shikimoriID=${shikimoriID}`;
-                videoIframe.width = '100%';
-                videoIframe.height = '100%';
-                videoIframe.frameBorder = 0;
-                videoIframe.allowFullscreen = true;
-                videoIframe.setAttribute('allow', 'autoplay *; fullscreen *');
-                videoWindow.document.body.appendChild(videoIframe);
-            }
+            // Добавление модального окна в документ
+            document.body.appendChild(videoModal);
         }
     }
 
-    // Закрытие окна с видеоплеером
-    function closeVideoWindow() {
-        if (videoWindow && !videoWindow.closed) {
-            videoWindow.close();
-            videoWindow = null;
+    // Закрытие модального окна с видеоплеером
+    function closeVideoModal() {
+        if (videoModal) {
+            document.body.removeChild(videoModal);
+            videoModal = null;
         }
     }
 
@@ -118,8 +118,8 @@
     const titleObserver = new MutationObserver(() => {
         if (document.title !== currentPageTitle) {
             currentPageTitle = document.title;
-            if (videoWindow && !videoWindow.closed) {
-                videoWindow.close();
+            if (videoModal) {
+                closeVideoModal();
             }
             watchOnlineButtonAdded = false;
             addWatchOnlineButton();
