@@ -6,8 +6,8 @@
 // @author XRay108
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=shikimori.one
 // @match        https://shikimori.one/animes/*
-// @updateURL    https://storage.oned4d.cc/js/shikimori/watch-shikimori.js
-// @downloadURL  https://storage.oned4d.cc/js/shikimori/watch-shikimori.js
+// @updateURL    https://raw.githubusercontent.com/xray108/new-ss-xray-docker/refs/heads/master/example/shikimori.js
+// @downloadURL  https://raw.githubusercontent.com/xray108/new-ss-xray-docker/refs/heads/master/example/shikimori.js
 // @grant none
 // ==/UserScript==
 (function() {
