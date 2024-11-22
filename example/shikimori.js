@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Просмотр аниме онлайн на shikimori.one
 // @namespace http://tampermonkey.net/
-// @version 0.3.4
+// @version 0.3.5
 // @description Добавляет кнопку "Смотреть онлайн" на странице с аниме и при нажатии выводит видеоплеер kodik для просмотра прямо на Shikimori
 // @author XRay108
 // @icon https://www.google.com/s2/favicons?sz=64&domain=shikimori.one
@@ -59,6 +59,22 @@
             videoIframe.allowFullscreen = true;
             videoIframe.setAttribute('allow', 'autoplay *; fullscreen *');
             videoModal.appendChild(videoIframe);
+
+            // Создание кнопки закрытия
+            const closeButton = document.createElement('button');
+            closeButton.textContent = '✖';
+            closeButton.style.position = 'absolute';
+            closeButton.style.top = '10px';
+            closeButton.style.right = '10px';
+            closeButton.style.backgroundColor = '#ff4500';
+            closeButton.style.color = '#ffffff';
+            closeButton.style.border = 'none';
+            closeButton.style.borderRadius = '5px';
+            closeButton.style.padding = '10px';
+            closeButton.style.cursor = 'pointer';
+            closeButton.style.zIndex = '1001';
+            closeButton.addEventListener('click', closeVideoModal);
+            videoModal.appendChild(closeButton);
 
             // Добавление модального окна в документ
             document.body.appendChild(videoModal);
