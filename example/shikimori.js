@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Просмотр аниме онлайн на shikimori.one
 // @namespace http://tampermonkey.net/
-// @version 0.3.3
+// @version 0.3.4
 // @description Добавляет кнопку "Смотреть онлайн" на странице с аниме и при нажатии выводит видеоплеер kodik для просмотра прямо на Shikimori
 // @author XRay108
 // @icon https://www.google.com/s2/favicons?sz=64&domain=shikimori.one
@@ -48,12 +48,13 @@
             videoModal.style.display = 'flex';
             videoModal.style.justifyContent = 'center';
             videoModal.style.alignItems = 'center';
+            videoModal.style.flexDirection = 'column';
 
             // Создание iframe и добавление в модальное окно
             const videoIframe = document.createElement('iframe');
             videoIframe.src = `//kodik.cc/find-player?shikimoriID=${shikimoriID}`;
-            videoIframe.width = '90%';
-            videoIframe.height = '50%';
+            videoIframe.style.width = '100vw'; // Ширина iframe равна ширине экрана
+            videoIframe.style.height = '56.25vw'; // Высота iframe для соотношения 16:9
             videoIframe.frameBorder = 0;
             videoIframe.allowFullscreen = true;
             videoIframe.setAttribute('allow', 'autoplay *; fullscreen *');
@@ -61,6 +62,13 @@
 
             // Добавление модального окна в документ
             document.body.appendChild(videoModal);
+
+            // Переключение в горизонтальное положение
+            if (window.screen.orientation && window.screen.orientation.lock) {
+                window.screen.orientation.lock('landscape').catch(error => {
+                    console.error('Ошибка при переключении в горизонтальное положение:', error);
+                });
+            }
         }
     }
 
@@ -69,6 +77,11 @@
         if (videoModal) {
             document.body.removeChild(videoModal);
             videoModal = null;
+
+            // Возврат в исходное положение
+            if (window.screen.orientation && window.screen.orientation.unlock) {
+                window.screen.orientation.unlock();
+            }
         }
     }
 
