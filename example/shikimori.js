@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name [SAP] Shikimori AnimePlay
 // @namespace http://tampermonkey.net/
-// @version 0.3.7
+// @version 0.3.8
 // @description Добавляет кнопку "Смотреть онлайн" на странице с аниме и при нажатии выводит видеоплеер kodik для просмотра прямо на Shikimori
 // @author XRay108
 // @icon https://www.google.com/s2/favicons?sz=64&domain=shikimori.one
@@ -18,8 +18,8 @@
     let watchOnlineButtonAdded = false;
     let videoModal = null;
 
-    const targetSelector = '.b-add_to_list.planned';
-    const descriptionSelector = '.c-about';
+    const targetSelector = '.b-poster'; // Селектор для постера
+    const watchButtonSelector = '.b-anime_watching'; // Селектор для кнопки "Смотрю"
 
     // Функция открытия модального окна с iframe
     function openVideoModal() {
@@ -93,7 +93,8 @@
     // Функция добавления кнопки
     function addWatchOnlineButton() {
         const targetElement = document.querySelector(targetSelector);
-        if (targetElement && !watchOnlineButtonAdded) {
+        const watchButton = document.querySelector(watchButtonSelector);
+        if (targetElement && watchButton && !watchOnlineButtonAdded) {
             const watchOnlineButton = document.createElement('button');
             watchOnlineButton.textContent = '▶ Смотреть онлайн';
             watchOnlineButton.classList.add('b-link_button');
@@ -107,6 +108,8 @@
             watchOnlineButton.style.borderRadius = '5px'; // Слегка округленные углы
             watchOnlineButton.style.cursor = 'pointer'; // Указатель мыши в виде руки при наведении
             watchOnlineButton.style.transition = 'background-color 0.3s'; // Плавный переход фона при наведении
+            watchOnlineButton.style.display = 'block'; // Отображение кнопки как блока
+            watchOnlineButton.style.margin = '10px auto'; // Центрирование кнопки
 
             // Добавление эффекта при наведении
             watchOnlineButton.addEventListener('mouseenter', () => {
@@ -117,7 +120,7 @@
             });
 
             watchOnlineButton.addEventListener('click', openVideoModal);
-            targetElement.parentNode.insertBefore(watchOnlineButton, targetElement.nextSibling);
+            targetElement.parentNode.insertBefore(watchOnlineButton, watchButton);
             watchOnlineButtonAdded = true;
         }
     }
