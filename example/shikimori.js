@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name [SAP] Shikimori AnimePlay
 // @namespace http://tampermonkey.net/
-// @version 0.3.9
+// @version 0.3.7
 // @description Добавляет кнопку "Смотреть онлайн" на странице с аниме и при нажатии выводит видеоплеер kodik для просмотра прямо на Shikimori
 // @author XRay108
 // @icon https://www.google.com/s2/favicons?sz=64&domain=shikimori.one
@@ -18,9 +18,8 @@
     let watchOnlineButtonAdded = false;
     let videoModal = null;
 
-    // Селекторы для поиска элементов
-    const posterSelector = '#animes_show > section > div > div.menu-slide-outer.x199 > div > div > div:nth-child(1) > div.b-db_entry > div.c-image > div.cc.block > div.c-poster'; // Селектор для постера
-    const watchButtonSelector = '.b-anime_watching'; // Селектор для кнопки "Смотрю"
+    const targetSelector = '.b-add_to_list.planned';
+    const descriptionSelector = '.c-about';
 
     // Функция открытия модального окна с iframe
     function openVideoModal() {
@@ -93,9 +92,8 @@
 
     // Функция добавления кнопки
     function addWatchOnlineButton() {
-        const poster = document.querySelector(posterSelector);
-        const watchButton = document.querySelector(watchButtonSelector);
-        if (poster && watchButton && !watchOnlineButtonAdded) {
+        const targetElement = document.querySelector(targetSelector);
+        if (targetElement && !watchOnlineButtonAdded) {
             const watchOnlineButton = document.createElement('button');
             watchOnlineButton.textContent = '▶ Смотреть онлайн';
             watchOnlineButton.classList.add('b-link_button');
@@ -109,11 +107,6 @@
             watchOnlineButton.style.borderRadius = '5px'; // Слегка округленные углы
             watchOnlineButton.style.cursor = 'pointer'; // Указатель мыши в виде руки при наведении
             watchOnlineButton.style.transition = 'background-color 0.3s'; // Плавный переход фона при наведении
-            watchOnlineButton.style.display = 'block'; // Отображение кнопки как блока
-            watchOnlineButton.style.margin = '10px auto'; // Центрирование кнопки
-            watchOnlineButton.style.width = 'fit-content'; // Ширина по содержимому
-            watchOnlineButton.style.marginLeft = 'auto'; // Выравнивание по правому краю
-            watchOnlineButton.style.marginRight = 'auto'; // Выравнивание по левому краю
 
             // Добавление эффекта при наведении
             watchOnlineButton.addEventListener('mouseenter', () => {
@@ -124,7 +117,7 @@
             });
 
             watchOnlineButton.addEventListener('click', openVideoModal);
-            poster.parentNode.insertBefore(watchOnlineButton, watchButton.nextSibling);
+            targetElement.parentNode.insertBefore(watchOnlineButton, targetElement.nextSibling);
             watchOnlineButtonAdded = true;
         }
     }
