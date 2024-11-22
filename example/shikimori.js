@@ -18,8 +18,7 @@
     let watchOnlineButtonAdded = false;
     let videoModal = null;
 
-    const targetSelector = '.b-add_to_list.planned';
-    const descriptionSelector = '.c-about';
+    const targetSelector = '#animes_show > section > div > div.menu-slide-outer.x199 > div > div > div:nth-child(1) > div.b-db_entry > div.c-image';
 
     // Функция открытия модального окна с iframe
     function openVideoModal() {
