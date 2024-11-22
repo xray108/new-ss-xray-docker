@@ -18,7 +18,7 @@
     let watchOnlineButtonAdded = false;
     let videoModal = null;
 
-    const targetSelector = '#animes_show > section > div > div.menu-slide-outer.x199 > div > div > div:nth-child(1) > div.b-db_entry > div.c-image';
+    const targetSelector = '#animes_show > section > div > div.menu-slide-outer.x199 > div > div > div:nth-child(1) > div.b-db_entry > div.c-image > div.cc.block';
 
     // Функция открытия модального окна с iframe
     function openVideoModal() {
