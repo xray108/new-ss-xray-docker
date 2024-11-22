@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name Просмотр аниме онлайн на shikimori.one
+// @name [SAP] Shikimori AnimePlay
 // @namespace http://tampermonkey.net/
-// @version 0.3.5
+// @version 0.3.6
 // @description Добавляет кнопку "Смотреть онлайн" на странице с аниме и при нажатии выводит видеоплеер kodik для просмотра прямо на Shikimori
 // @author XRay108
 // @icon https://www.google.com/s2/favicons?sz=64&domain=shikimori.one
