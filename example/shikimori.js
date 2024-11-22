@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name [SAP] Shikimori AnimePlay
 // @namespace http://tampermonkey.net/
-// @version 0.3.6
+// @version 0.3.7
 // @description Добавляет кнопку "Смотреть онлайн" на странице с аниме и при нажатии выводит видеоплеер kodik для просмотра прямо на Shikimori
 // @author XRay108
 // @icon https://www.google.com/s2/favicons?sz=64&domain=shikimori.one
@@ -21,18 +21,7 @@
     const targetSelector = '.b-add_to_list.planned';
     const descriptionSelector = '.c-about';
 
-    // Функция открытия или закрытия модального окна с iframe
-    function toggleVideoPlayer(button) {
-        if (!videoModal) {
-            openVideoModal();
-            button.textContent = '✔ Закрыть';
-        } else {
-            closeVideoModal();
-            button.textContent = '▶ Смотреть онлайн';
-        }
-    }
-
-    // Открытие модального окна с iframe-видеоплеером
+    // Функция открытия модального окна с iframe
     function openVideoModal() {
         const shikimoriID = getShikimoriID();
         if (shikimoriID) {
@@ -127,7 +116,7 @@
                 watchOnlineButton.style.backgroundColor = '#ff4500'; // Возврат к исходному цвету
             });
 
-            watchOnlineButton.addEventListener('click', () => toggleVideoPlayer(watchOnlineButton));
+            watchOnlineButton.addEventListener('click', openVideoModal);
             targetElement.parentNode.insertBefore(watchOnlineButton, targetElement.nextSibling);
             watchOnlineButtonAdded = true;
         }
